@@ -4,9 +4,9 @@ import React from 'react'
 const Navbar = () => {
   return (
     <div className='flex items-center justify-between p-4'>
-        <div className='hidden md:flex items-center gap-2 text-xs rounded-full ring-[1.5px] ring-gray-300 px-2'>
+        <div className='hidden md:flex items-center gap-2 text-xs rounded-full ring-[1.5px] ring-gray-300 px-2 py-0.5'>
             <Image src="/search.png" width={14} height={14} alt="" />
-            <input type='text' placeholder='Search...' />
+            <input type='text' placeholder='Search...' className='outline-none p-1 rounded-full' />
         </div>
         <div className='flex items-center gap-6'>
         <div className='bg-white flex items-center w-7 h-7 rounded-full justify-center cursor-pointer'>

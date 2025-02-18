@@ -1,5 +1,5 @@
 "use client";
-import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import { faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import dynamic from "next/dynamic";
 import Image from "next/image";
@@ -43,12 +43,14 @@ const FormModal = ({
   id?: number;
 }) => {
   const size = type === "create" ? "w-8 h-8" : "w-7 h-7";
-  const bgColor =
-    type === "create"
-      ? "bg-cyan-300"
-      : type === "update"
-      ? "bg-teal-300"
-      : "bg-transparent";
+  // const bgColor =
+  //   type === "create"
+  //     ? "bg-cyan-300"
+  //     : type === "update"
+  //     ? "bg-teal-50"
+  //     : "bg-transparent";
+  const bgColor = "bg-transparent";
+
   const [open, setOpen] = useState(false);
   const Form = () => {
     return type === "delete" && id ? (
@@ -72,7 +74,11 @@ const FormModal = ({
         className={`${size} flex items-center justify-center rounded-full ${bgColor}`}
         onClick={() => setOpen(true)}
       >
-        <FontAwesomeIcon icon={faTrash} size="lg" className="text-red-500"/>
+        {type === "delete" ? (
+          <FontAwesomeIcon icon={faTrash} size="lg" className="text-red-500" />
+        ) : (
+          <FontAwesomeIcon icon={faEdit} size="lg" className="text-blue-400" />
+        )}
 
         {/* <Image src={`/${type}.png`} alt="" height={16} width={16} /> */}
       </button>
