@@ -1,8 +1,11 @@
+// "use client"; // ✅ Fix: Mark this as a Client Component
+
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { fas } from '@fortawesome/free-solid-svg-icons';
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fas } from "@fortawesome/free-solid-svg-icons";
+import { Providers } from "@/components/ProviderWrapper";
 
 library.add(fas);
 
@@ -18,7 +21,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "School Management",
-  description: "School managemnt system",
+  description: "School management system",
 };
 
 export default function RootLayout({
@@ -31,7 +34,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

@@ -9,10 +9,24 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    remotePatterns: [{ hostname: "images.pexels.com" }],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.pexels.com",
+      },
+      {
+        protocol: "https",
+        hostname: "cdn.dummyjson.com",
+      },
+    ],
   },
   experimental: {
-    appDir: true,  // Enables the app directory feature
+    appDir: true, // Enables the app directory feature
+  },
+  env: {
+    NEXTAUTH_URL: process.env.NEXTAUTH_URL, // Expose only non-sensitive environment variables
+    GITHUB_CLIENT_ID: process.env.GITHUB_CLIENT_ID, // Not recommended to expose secret!
+    GITHUB_CLIENT_SECRET: process.env.GITHUB_CLIENT_SECRET,
   },
 };
 

@@ -1,5 +1,5 @@
 "use client"
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import InputFeild from "../InputFeild";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -24,9 +24,13 @@ type Inputs = z.infer<typeof schema>;
 const TeacherForm = ({
   type,
   data,
+  setOpen,
+  relatedData,
 }: {
   type: "create" | "update";
   data?: any;
+  setOpen: Dispatch<SetStateAction<boolean>>;
+  relatedData: any;
 }) => {
   const {
     register,

@@ -1,18 +1,23 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from "next/server";
 
-export async function GET() {
-  try {
-    return NextResponse.json({ hello: 'world' });
-  } catch (error: any) {
-    return NextResponse.json({ error: error.message });
+// export async function GET() {
+//   try {
+//     return NextResponse.json({ hello: "world" });
+//   } catch (error: any) {
+//     return NextResponse.json({ error: error.message });
+//   }
+// }
+
+// export async function POST() {
+//   try {
+//     return NextResponse.json({ hello: "world" });
+//   } catch (error: any) {
+//     return NextResponse.json({ error: error.message });
+//   }
+// }
+
+export default function handler(req: NextRequest, res: NextResponse) {
+  if (req.method === "GET") {
+    res.json();
   }
 }
-
-export async function POST() {
-  try {
-    return NextResponse.json({ hello: 'world' });
-  } catch (error: any) {
-    return NextResponse.json({ error: error.message });
-  }
-}
-
