@@ -49,23 +49,23 @@ const FormModal = ({
       : type === "update"
       ? "bg-teal-300"
       : "bg-transparent";
-  const [open, setOpen] = useState(false);
-  const Form = () => {
-    return type === "delete" && id ? (
-      <form action="" className="p-4 flex flex-col gap-4">
-        <span className="text-center font-medium">
-          All data will be lost. Are you sure want to delete this {table}?
-        </span>
-        <button className="bg-red-700 text-white py-2 px-4 rounded-md border-none w-max self-center">
-          Delete
-        </button>
-      </form>
-    ) : type === "create" || type === "update" ? (
-      forms[table](type, data)
-    ) : (
-      "Form not found!"
-    );
-  };
+  const [open, setOpen] = useState(false); 
+  // const Form = () => {
+  //   return type === "delete" && id ? (
+  //     <form action="" className="p-4 flex flex-col gap-4">
+  //       <span className="text-center font-medium">
+  //         All data will be lost. Are you sure want to delete this {table}?
+  //       </span>
+  //       <button className="bg-red-700 text-white py-2 px-4 rounded-md border-none w-max self-center">
+  //         Delete
+  //       </button>
+  //     </form>
+  //   ) : type === "create" || type === "update" ? (
+  //     forms[table](type, data)
+  //   ) : (
+  //     "Form not found!"
+  //   );
+  // };
   return (
     <>
       <button
