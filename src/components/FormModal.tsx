@@ -11,6 +11,7 @@ const TeacherForm = dynamic(() => import("./form/TeacherForm"), {
 // const StudentForm=dynamic(() => import("./form/TeacherForm"),{
 //     loading: () => <h1>Loading</h1>
 // })
+// Just to check wheather my branch or ur's
 
 const forms: {
   [key: string]: (type: "create" | "update", data?: any) => JSX.Element;
