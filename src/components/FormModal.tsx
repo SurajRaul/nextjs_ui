@@ -8,9 +8,9 @@ import React, { JSX, useState } from "react";
 const TeacherForm = dynamic(() => import("./form/TeacherForm"), {
   loading: () => <h1>Loading</h1>,
 });
-const StudentForm=dynamic(() => import("./form/TeacherForm"),{
-    loading: () => <h1>Loading</h1>
-})
+// const StudentForm=dynamic(() => import("./form/TeacherForm"),{
+//     loading: () => <h1>Loading</h1>
+// })
 
 const forms: {
   [key: string]: (type: "create" | "update", data?: any) => JSX.Element;
